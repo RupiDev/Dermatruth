@@ -23,6 +23,9 @@ p {
 	color: white;
 	font-size: 26px;
 }
+.jumbotron img {
+	border-radius: 50%;
+}
 .btn-primary {
 	color: #fff;
 	background-color: transparent;
