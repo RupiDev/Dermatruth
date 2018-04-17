@@ -40,20 +40,3 @@ print(darkCicleNumber)
 print(stainNumber)
 print(acneNumber)
 print(healthNumber)
-
-
-#'6899404d3448ffe858cdecc5f3eba469'
-
-#print(result["faces"])
-
-#for item in result["faces"]:
-#	print(item[1])
-
-
-#files = {
-#	'api_key': 'gryzgcX2dsic4Rrj1oZKEvx-x79rE5tf',
-#	'api_secret': 'WmhD0zJCtwcHKwP6qmDtnzhVpO_hU5HB',
-#	'return_attributes':  'age,gender,skinstatus',
-#	'face_tokens': '6899404d3448ffe858cdecc5f3eba469',
-
-#}
