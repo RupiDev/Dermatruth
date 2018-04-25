@@ -20,15 +20,6 @@ p {
 	font-family: 'Poiret One', cursive;
 	text-align: center;
 }
-.form-group-roww {
-	color: white;
-	font-size: 15px;
-}
-.resultLabels {
-	text-align: center;
-	font-size: 30px;
-	color: #d4938b;
-}
 .jumbotron p {
 	color: white;
 	font-size: 26px;
@@ -41,49 +32,9 @@ p {
 	background-color: transparent;
 	border-color: #d4938b;
 	margin-bottom: 5px;
-	height: 200px;
-  	width: 200px;
-  	border-radius: 100%;
-  	display: inline-flex;
-  	flex-direction: column;
-  	justify-content: center;
-  	align-items: center;
 
 }
 
-.btn-secondary {
-	color: #d4938b;
-	background-color: transparent;
-	border-color: transparent;
-	margin-bottom: 5px;
-	height: 150px;
-  	width: 150px;
-  	border-radius: 100%;
-  	display: inline-flex;
-  	flex-direction: column;
-  	justify-content: center;
-  	align-items: center;
-}
-
-.btn-finish{
-	color: #f1f1f2;
-	background-color: transparent;
-	border-color: #f1f1f2;
-	margin-bottom: 5px;
-	height: 150px;
-  	width: 150px;
-  	border-radius: 100%;
-  	display: inline-flex;
-  	flex-direction: column;
-  	justify-content: center;
-  	align-items: center;
-
-}
-.disabled{
-	background-color: #f1f1f2;
-	border-color: #d4938b;
-	opacity: 0.3
-}
 
 .btn-primary:hover {
 	color: #d4938b;
@@ -105,11 +56,10 @@ p {
 	background: #d4938b;
 	color: #f1f1f2;
 	font-family: 'Raleway', sans-serif;
-	font-size: 25px;
 	text-align: center;
 }
 
-.list {
+.slidecontainer {
 	font-size: 16px;
 	color: #d4938b;
 	background-color: #d4938b

@@ -20,18 +20,13 @@ p {
 	font-family: 'Poiret One', cursive;
 	text-align: center;
 }
-.form-group-roww {
-	color: white;
-	font-size: 15px;
-}
-.resultLabels {
-	text-align: center;
-	font-size: 30px;
-	color: #d4938b;
-}
 .jumbotron p {
-	color: white;
-	font-size: 26px;
+	color: #d4938b;
+	font-family: 'Poiret One', cursive;
+	font-weight: bold;
+	font-weight: 900;
+	text-align: center;
+	font-size: 45px;
 }
 .jumbotron img {
 	border-radius: 50%;
@@ -51,39 +46,6 @@ p {
 
 }
 
-.btn-secondary {
-	color: #d4938b;
-	background-color: transparent;
-	border-color: transparent;
-	margin-bottom: 5px;
-	height: 150px;
-  	width: 150px;
-  	border-radius: 100%;
-  	display: inline-flex;
-  	flex-direction: column;
-  	justify-content: center;
-  	align-items: center;
-}
-
-.btn-finish{
-	color: #f1f1f2;
-	background-color: transparent;
-	border-color: #f1f1f2;
-	margin-bottom: 5px;
-	height: 150px;
-  	width: 150px;
-  	border-radius: 100%;
-  	display: inline-flex;
-  	flex-direction: column;
-  	justify-content: center;
-  	align-items: center;
-
-}
-.disabled{
-	background-color: #f1f1f2;
-	border-color: #d4938b;
-	opacity: 0.3
-}
 
 .btn-primary:hover {
 	color: #d4938b;

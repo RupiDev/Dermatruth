@@ -4,37 +4,84 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="http://code.jquery.com/jquery 2.1.4.min.js"></script>  
+ 
     <title>Instructions</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="Styles/results.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One|Raleway" rel="stylesheet">
+
+	<style type="text/css">
+		body, html {
+			height: 100%;
+			margin: 0;
+		}
+
+		.jumbotron {
+			background-image: url("Images/clicBackground25.jpg");
+			height: 100%
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
   </head>
 
   <body>
   	<div class="jumbotron">
 		<div class="container">
-			<img src="Images/smileBaby.jpg" alt="testPic" border-radius: 50%>
+			<img src="Images/adam-marcucci-568042-unsplash.jpeg" alt="testPic" border-radius: 100% height="500">
 			<br>
 			<br>
 			<h1>Your DermaTruth Results</h1>
 			<br>
 			<br>
+			<br>
+			<br>
+			<div style="text-align: center;">
+				<p>
+					<div class="form-group-roww">	
+						<div class = "resultLabels">Your predictions:</div>
+						<div class=col-md-3>
+							<a class="btn btn-secondary btn-lg"  href="#" role="button" disabled = true ><h1 id="predictacne">10%</h1><br>
+							</a>
+						</div>
+						<div class=col-md-3>
+							<a class="btn btn-secondary btn-lg" href="#" role="button" disabled = true ><h1 id="predictdarkcirc">20%</h1><br> </a>
+						</div>
+						<div class=col-md-3>
+							<a class="btn btn-secondary btn-lg" href="#" role="button" disabled = true ><h1 id="predictdiscolor">30%</h1><br> 
+							</a>
+						</div>
+						<div class=col-md-3>
+							<a class="btn btn-secondary btn-lg" href="#" role="button" disabled = true ><h1 id="predicthydrate">40%</h1><br> 
+							</a>
+						</div>
+					</div>
+				</p>
+			</div>
+			<br>
+			<br>
 			<div style="text-align: center;">
 				<p>
 					<div class="form-group row">
+						<div class = "resultLabels">Computer results:</div>
 						<div class=col-md-3>
-							<a class="btn btn-primary btn-lg" href="#" role="button"><h1>0%</h1><br> Acne</a>
+							<a class="btn btn-primary btn-lg" href="#" role="button" onclick="acne()"><h1>13%</h1><br> Acne</a>
 						</div>
 						<div class=col-md-3>
-							<a class="btn btn-primary btn-lg" id="darkspotval" href="#" role="button"><h1 >0%</h1><br> Dark Spots</a>
+							<a class="btn btn-primary btn-lg" id="darkcircval" href="#" role="button" onclick="darkCircles()"><h1 >22%</h1><br> Dark Circles</a>
 						</div>
 						<div class=col-md-3>
-							<a class="btn btn-primary btn-lg" href="#" role="button"><h1>0%</h1><br> Discoloration</a>
+							<a class="btn btn-primary btn-lg" id="discolorval" href="#" role="button" onclick="discolor()"><h1>42%</h1><br> Discoloration</a>
 						</div>
 						<div class=col-md-3>
-							<a class="btn btn-primary btn-lg" href="#" role="button"><h1>98%</h1><br> Hydration</a>
+							<a class="btn btn-primary btn-lg" id="hydrationval" href="#" role="button" onclick="hydration()"><h1>38%</h1><br> Hydration</a>
 						</div>
 					</div>
 				</p>
@@ -43,10 +90,9 @@
 	</div>
 
 	<h1>
-		<div class="Description">
-			This is a description of ance, and here are a list of acne products
-
-			<div style="text-align: center;">
+		<div class="Description" id='id01'>
+			Choose one of your results to get more information on what it means.<br /><br />
+			<!--<div style="text-align: center;">
 					<p>
 						<div class="form-group row">
 							<div class=col-md-3>
@@ -63,11 +109,50 @@
 							</div>
 						</div>
 						</p>
-			</div>
+			</div> -->
+		</div>
+		<p>  <br /><br />  </p>
+		<div class="Finish">
+			<a class="btn btn-finish btn-lg" href="finalPage.html" role="button">Finish</a>
 		</div>
 	</h1>
 
 
+  	<script type="text/javascript">
+  		window.onload = function (argument) {
+  			var x = localStorage.getItem("values");
+  			console.log(x);
+  			var dict = JSON.parse(localStorage.getItem("values"));
+  			console.log(dict["acne"]);
+  			console.log(dict.acne);
+
+  			document.getElementById("predictacne").innerHTML = dict.acne + "%";
+  			document.getElementById("predictdarkcirc").innerHTML = dict.darkcircle + "%";
+  			document.getElementById("predictdiscolor").innerHTML = dict.discoloration + "%";
+  			document.getElementById("predicthydrate").innerHTML = dict.hydration + "%";
+  		}
+  		
+
+   		function acne(){
+   			var element = document.getElementById("id01");
+			element.innerHTML = "Acne is determined by looking at the amount of break out visible on your skin. <br />Based on your acne results, we have determined that you have little acne.<br />  ";
+   		}
+   		function darkCircles(){
+   			var element = document.getElementById("id01");
+			element.innerHTML = "Dark circles is determined by looking at the change in color or puffiness under your eyes. <br /> Based on your dark circle results, we have determined that you have some dark cirlces. <br />  ";
+   		}
+   		function discolor(){
+   			var element = document.getElementById("id01");
+			element.innerHTML = "Discoloration is determined by looking at the change in color of your skin, such as freckles or dark spots. <br />Based on your discoloration results, we have determined that you have skin discoloration.<br />  ";
+   		}
+   		function hydration(){
+   			var element = document.getElementById("id01");
+			element.innerHTML = "Hydration is determined by measuring overall health of your skin. <br />Based on your hydration results, we have determined that you have little hydration in your skin.<br />  ";
+   		}
+	</script>
+
+
   </body>
+
 
  </html>

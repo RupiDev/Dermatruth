@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<!--<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+    <title>Instructions</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="Styles/prediction.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Poiret+One|Raleway" rel="stylesheet">
+	<style type="text/css">
+		body, html {
+			height: 100%;
+			margin: 0;
+		}
+
+		.jumbotron {
+			background-image: url("Images/clicBackground25.jpg");
+			height: 100%
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.slidecontainer {
+    		width: 100%;
+		}
+
+		.slider {
+		    -webkit-appearance: none;
+		    width: 100%;
+		    height: 25px;
+		    background: #d3d3d3;
+		    outline: none;
+		    opacity: 0.7;
+		    -webkit-transition: .2s;
+		    transition: opacity .2s;
+		}
+
+		.slider:hover {
+    		opacity: 1;
+		}
+
+		.slider::-webkit-slider-thumb {
+		    -webkit-appearance: none;
+		    appearance: none;
+		    width: 25px;
+		    height: 25px;
+		    background: #4CAF50;
+		    cursor: pointer;
+		}
+
+		.slider::-moz-range-thumb {
+		    width: 25px;
+		    height: 25px;
+		    background: #4CAF50;
+		    cursor: pointer;
+		}
+	</style>
+
+  </head>
+
+  <body>
+  	<div class="jumbotron">
+		<div class="container">
+			<h1>Rate your predictions of the health of your skin</h1>
+			<p>
+				
+			</p>
+			<br>
+			<img src="Images/adam-marcucci-568042-unsplash.jpeg" alt="testPic" border-radius: 100% height="500">
+			<br>
+				<div class="slidecontainer">
+					<div style="text-align: center;">
+							<div class="form-group row">
+								<div class=col-md-3>
+									<div data-role="main" class="ui-content">
+									    <form method="post" action="/action_page_post.php">
+									      <label id="acneLevel" for="points">Acne Level: 50</label>
+									      <input type="range" name="points" id="acne" value="50" min="0" max="100" data-show-value="true" oninput="test()">
+									    </form>
+								  	</div>
+			  					</div>
+				  				<div class=col-md-3>
+									 <div data-role="main" class="ui-content">
+									    <form method="post" action="/action_page_post.php">
+									      <label id="darkcircleLevel" for="points">Dark Circles Level: 50</label>
+									      <input type="range" name="points" id="darkcircle" value="50" min="0" max="100" data-show-value="true" oninput="test()">
+									    </form>
+									 </div>
+			  					</div>
+				  				<div class=col-md-3>
+								  	<div data-role="main" class="ui-content">
+									    <form method="post" action="/action_page_post.php">
+									      <label id="discolorLevel" for="points">Discoloration Level: 50</label>
+									      <input type="range" name="points" id="discolor" value="50" min="0" max="100" data-show-value="true" oninput="test()">
+									    </form>
+									 </div>
+			  					</div>
+				  				<div class=col-md-3>
+								  	<div data-role="main" class="ui-content">
+									    <form method="post" action="/action_page_post.php">
+									      <label id="hydrateLevel" for="points">Hydration Level: 50</label>
+									      <input type="range" name="points" id="hydrate" value="50" min="0" max="100" data-show-value="true" oninput="test()">
+									    </form>
+									</div>
+			  					</div>
+			  				</div>
+			  		</div>
+				<div>
+			<br>
+			<p>
+				<a class="btn btn-primary btn-lg" href="./resultPage.html" role="button" onclick="getValues()">Computed Result »</a>
+			</p>
+
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+
+		function test(){
+			var acneVal = document.getElementById("acne").value
+			var darkcircleVal = document.getElementById("darkcircle").value
+			var discolorVal = document.getElementById("discolor").value
+			var hydrationVal = document.getElementById("hydrate").value
+			
+        	var dict2 = {
+        		acne: acneVal,
+        		darkcircle: darkcircleVal,
+        		discoloration: discolorVal,
+        		hydration: hydrationVal
+        	};
+
+			var x = dict2.acne
+			console.log(x);
+			document.getElementById("acneLevel").innerHTML = "Acne Level: " + acneVal;
+			document.getElementById("darkcircleLevel").innerHTML = "Dark Circles Level: " + darkcircleVal;
+			document.getElementById("discolorLevel").innerHTML = "Discoloration Level: " + discolorVal;
+			document.getElementById("hydrateLevel").innerHTML = "Hydration Level: " + hydrationVal;
+		}
+
+		function getValues(){
+			var acneVal = document.getElementById("acne").value
+			var darkcircleVal = document.getElementById("darkcircle").value
+			var discolorVal = document.getElementById("discolor").value
+			var hydrationVal = document.getElementById("hydrate").value
+			
+        	var dict = {
+        		acne: acneVal,
+        		darkcircle: darkcircleVal,
+        		discoloration: discolorVal,
+        		hydration: hydrationVal
+        	};
+        	
+        	localStorage.setItem("values", JSON.stringify(dict));
+        	
+		}
+
+
+	</script>
+
+  </body>
+
+ </html>
